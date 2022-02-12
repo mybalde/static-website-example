@@ -6,7 +6,6 @@ pipeline {
         echo 'Placeholder'
         writeFile(text: 'Edited Placeholder.', file: 'test.txt')
         sh 'echo Edited Placeholder.'
-        archiveArtifacts(artifacts: '*.txt', fingerprint: true)
       }
     }
 
@@ -23,5 +22,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    BUZZ_NAME = 'Worker Bee'
   }
 }
