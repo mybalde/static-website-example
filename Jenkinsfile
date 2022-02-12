@@ -4,7 +4,8 @@ pipeline {
     stage('Fluffy Build') {
       steps {
         echo 'Placeholder'
-        sh 'echo Edited Placeholder.'
+        sh 'echo Edited Placeholder. > text.txt'
+        archiveArtifacts(artifacts: 'target/.txt', fingerprint: true)
       }
     }
 
