@@ -5,7 +5,8 @@ pipeline {
       steps {
         echo 'Placeholder'
         writeFile(text: 'Edited Placeholder.', file: 'test.txt')
-        sh 'echo Edited Placeholder.'
+        sh 'printenv > env.sh'
+        stash 'env.sh'
       }
     }
 
@@ -18,7 +19,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('test') {
           steps {
             echo 'aaaaaaa'
           }
